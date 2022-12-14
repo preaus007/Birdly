@@ -11,14 +11,16 @@ import Classification from "./Components/Classification/Classification/Classific
 function App() 
 {
   
-
+//Gludiolus
+//73sE7n8b27Aw7GLA
 AOS?.init()
   return (
     <div className="App">
-      <Header></Header>
+    <Header></Header>
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/home" element={<Home></Home>}></Route>
+        
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/signup" element={<Registration></Registration>}></Route>
         <Route path="/class" element={<Classification></Classification>}></Route>

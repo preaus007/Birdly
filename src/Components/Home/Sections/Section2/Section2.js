@@ -3,9 +3,9 @@ import React from "react";
 const Section2 = () => {
   return (
     <div className="container mt-20 p-16 ml-auto mr-auto">
-      <h2 className="text-xl font-bold text-center mt-16 mb-10 insp-header">
+      <h1 className="text-3xl font-bold text-center mt-16 mb-10 insp-header">
         Birds make great pets
-      </h2>
+      </h1>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-24">
         <article className="my-auto">
           <p className="insp">
