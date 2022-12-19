@@ -23,6 +23,14 @@ const Classification = () => {
     e.preventDefault();
     setFile(src)
   };
+
+  const handleClassified = (url) =>
+  {
+    console.log(file);
+    fetch(`http://localhost:8000/classification/${url}`)
+    .then(res => res.json())
+    .then(data => console.log(data))
+  }
   return (
     <div>
       <article className="container ml-auto mr-auto p-16">
@@ -39,6 +47,11 @@ const Classification = () => {
             <Canvas image={file}></Canvas>
           </div>
         </div>
+      </article>
+
+
+      <article>
+        <button className ="btn btn-success" onClick={()=> handleClassified(src)}>CLassify</button>
       </article>
     </div>
   );
