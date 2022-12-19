@@ -4,6 +4,7 @@
         "scientific-Name" : "Callipepla californica",
         "price" : "25",
         "stock" : "100",
-        "family" : "Quail"
+        "family" : "Quail",
+        "img": ""
     }
 ]
