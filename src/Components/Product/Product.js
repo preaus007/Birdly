@@ -7,7 +7,7 @@ const Product = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetch(`https://fakestoreapi.com/products`)
+    fetch(`http://localhost:8000/products`)
       .then((res) => res.json())
       .then((data) => {
         setData(data);
@@ -17,7 +17,7 @@ const Product = () => {
   }, []);
 
   const filterProduct = (cat) => {
-    const updateList = data.filter((x) => x.category === cat);
+    const updateList = data.filter((x) => x?.family === cat);
     setSieve(updateList);
   }
 
@@ -27,10 +27,10 @@ const Product = () => {
         <div className="mx-2">
             <div className="flex justify-center" id="Product">
                 <button className="btn btn-outline mx-0.5" onClick={() => setSieve(data)}>All</button>
-                <button className="btn btn-outline mx-0.5" onClick={() => filterProduct("men's clothing")}>Pigeon</button>
-                <button className="btn btn-outline mx-0.5" onClick={() => filterProduct("women's clothing")}>Parrots</button>
-                <button className="btn btn-outline mx-0.5" onClick={() => filterProduct("jewelery")}>Cockatoo</button>
-                <button className="btn btn-outline mx-0.5" onClick={() => filterProduct("electronics")}>Quail</button>
+                <button className="btn btn-outline mx-0.5" onClick={() => filterProduct("Cockatoo")}>Cockatoo</button>
+                <button className="btn btn-outline mx-0.5" onClick={() => filterProduct("Lovebird")}>Love Birds</button>
+                <button className="btn btn-outline mx-0.5" onClick={() => filterProduct("Macaw")}>Macaws</button>
+                <button className="btn btn-outline mx-0.5" onClick={() => filterProduct("Quail")}>Quail</button>
             </div>
             <div className="grid grid-cols-4">
                 {sieve.map((product) => {
@@ -40,7 +40,7 @@ const Product = () => {
                                 <img src={product.image} alt="birds" className="rounded-xl h-48" />
                             </figure>
                             <div className="card-body items-center text-center">
-                                <h2 className="card-title">{product.title.substring(0, 12)}...</h2>
+                                <h2 className="card-title">{product?.name?.substring(0, 12)}...</h2>
                                 <p>${product.price}</p>
                                 <div className="card-actions">
                                 <button className="btn btn-primary">Buy Now</button>
