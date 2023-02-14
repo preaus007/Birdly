@@ -77,3 +77,33 @@
     font-family: 'Poppins', sans-serif;
     
 }
+
+.btn-buy
+{
+    background-color: #FCFFE7;
+    color: #000;
+}
+
+.btn-buy:hover
+{
+    background-color: #FFB26B;
+    color: #fff;
+}
+
+
+
+.btn-detailes
+{
+    background-color: #FED2AA;
+    color: #000;
+}
+
+.btn-detailes:hover
+{
+    background-color: #FFBF86;
+    color: #FCFFE7;
+}
+
+
+
+
