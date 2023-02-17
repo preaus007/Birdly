@@ -2,7 +2,7 @@ import React from "react";
 
 const Section2 = () => {
   return (
-    <div className="container mt-20 p-16 ml-auto mr-auto">
+    <div className="container mt-20  ml-auto mr-auto p-40">
       <h1 className="text-3xl font-bold text-center mt-16 mb-10 insp-header">
         Birds make great pets
       </h1>
