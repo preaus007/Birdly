@@ -1,6 +1,10 @@
 import React from "react";
 
 import { Link } from "react-router-dom";
+import Lottie from 'lottie-react'
+import Cart from '../../../src/Assets/83034-beaut-loading-cart.json'
+import bird from "../../Assets/pix3.png"
+
 
 const Header = () => {
   return (
@@ -57,15 +61,14 @@ const Header = () => {
             </li>
           </ul>
         </div>
-        <Link to="/" className="btn btn-ghost normal-case text-xl">
-          Birdly
+        <Link to="/" className="btn btn-ghost normal-case flex text-xl">
+          <img src={bird} alt="logo" className="title-icon mr-2"/>
+          <h2>Birdly</h2>
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal p-0">
-          <li>
-          <Link to="/home">Home</Link>
-          </li>
+          
           <li tabIndex={0}>
             <a>
               Parent
@@ -94,10 +97,25 @@ const Header = () => {
           <li>
             <Link to="/class">Classification</Link>
           </li>
+          <li>
+            <Link>Our Services</Link>
+
+          </li>
+          <li>
+            <Link>Contact Us</Link>
+
+          </li>
+
+          <li>
+          </li>
         </ul>
       </div>
       <div className="navbar-end">
-        <Link to="/product" className="btn">Shop now</Link>
+        
+      <Link to="/product" className="btn">Shop now</Link>
+        <Link to='/cart' className="cart-icon">
+          <Lottie animationData={Cart} loop={true} />
+        </Link>
       </div>
     </div>
   );

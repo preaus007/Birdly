@@ -8,6 +8,8 @@ import Registration from "./Components/Authentication/Registration/Registration"
 import { AOS } from "aos";
 import Classification from "./Components/Classification/Classification/Classification";
 import Product from "./Components/Product/Product";
+import RequireAuth from "./Components/Authentication/RequireAuth";
+import Cart from "./Components/Orders/Cart/Cart";
 
 function App() 
 {
@@ -24,9 +26,9 @@ AOS?.init()
         
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/signup" element={<Registration></Registration>}></Route>
-        <Route path="/class" element={<Classification></Classification>}></Route>
+        <Route path="/class" element={<RequireAuth><Classification></Classification></RequireAuth>}></Route>
         <Route path="/product" element={<Product/>}></Route>
-        <Route></Route>
+        <Route path="/cart" element={<RequireAuth><Cart></Cart></RequireAuth>}></Route>
         <Route></Route>
         <Route></Route>
         <Route></Route>

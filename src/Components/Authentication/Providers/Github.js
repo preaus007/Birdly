@@ -1,10 +1,16 @@
+import  Lottie from 'lottie-react';
 import React from 'react';
+import githubAnim from "../../../Assets/81333-github.json"
 
-const Github = () => {
+const Github = (props) => 
+{
+    const { githubSignIn } = props
     return (
-        <div>
+        <button className='btn githubBtn' onClick={githubSignIn}>
             
-        </div>
+            <Lottie className='git-animation' animationData={githubAnim} loop={true}></Lottie>
+            Sign up with github 
+        </button>
     );
 };
 
