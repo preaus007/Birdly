@@ -1,10 +1,12 @@
 import React from "react";
+import { useState } from "react";
+import DatePicker from "react-datepicker";
 import { useForm } from "react-hook-form";
 import auth from "../../../firebase.init";
-
+import 'react-datepicker/dist/react-datepicker.css'
 
 const Email = (props) => {
-  const { type , login , signup } = props;
+  const { type, login, signup } = props;
   let email;
 
   const {
@@ -14,16 +16,16 @@ const Email = (props) => {
   } = useForm();
 
 
-  const handleLogin = (data) =>
-  {
-    login(data.email , data.password)
+  const handleLogin = (data) => {
+    login(data.email, data.password)
   }
 
 
-  const handleSignUp = data =>
-  {
-      signup(data.name , data.email, data.phnNumber , data.password)
+  const handleSignUp = data => {
+    signup(data.name, data.email, data.phnNumber, data.password)
   }
+
+  const [startDate, setStartDate] = useState(new Date());
 
 
 
@@ -36,7 +38,7 @@ const Email = (props) => {
           </label>
           <input
             type="email"
-            placeholder="Your Email" 
+            placeholder="Your Email"
             className="input input-bordered w-full max-w-xs"
             {...register("email", {
               required: { value: true, message: "email is required" },
@@ -86,7 +88,7 @@ const Email = (props) => {
 
         <input
           value="Login"
-          className="btn w-full w text-white"
+          className="btn w-full w text-white emailBtn"
           type="submit"
         />
       </form>
@@ -141,6 +143,18 @@ const Email = (props) => {
               </span>
             )}
           </label>
+
+          <label className="label">
+            <span className="label-text">Birth Date</span>
+          </label>
+
+          <DatePicker selected={startDate}
+            onChange={(date) => setStartDate(date)}
+            peekNextMonth
+            showMonthDropdown
+            showYearDropdown
+            dropdownMode="select" className="input input-bordered w-full max-w-xs" />
+
           <label className="label">
             <span className="label-text">Phone Number</span>
           </label>
@@ -200,7 +214,7 @@ const Email = (props) => {
 
         <input
           value="Sign Up"
-          className="btn w-full w text-white"
+          className="btn w-full w text-white emailBtn"
           type="submit"
         />
       </form>

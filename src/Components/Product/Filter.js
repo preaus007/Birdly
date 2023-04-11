@@ -1,8 +1,14 @@
 import React from 'react'
 
-function Filter() {
+function Filter(props) 
+{
+
+  const {family , filterProduct} = props
   return (
-    <div>Filter</div>
+    <div >
+      
+    <button className="btn btn-outline mx-0.5" onClick={() => filterProduct(family)}>{family}</button>
+    </div>
   )
 }
 

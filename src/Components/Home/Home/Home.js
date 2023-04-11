@@ -15,9 +15,10 @@ const Home = () => {
 
       <Banner></Banner>
       <Section4></Section4>
-      <Services></Services>
+      
       <Section2></Section2>
       <Section3></Section3>
+      <Services></Services>
       <Section1></Section1>
       <Section5></Section5>
       <Section6></Section6>

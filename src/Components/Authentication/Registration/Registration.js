@@ -3,6 +3,8 @@ import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
 import auth from "../../../firebase.init";
 import Email from "../Providers/Email";
+import Github from "../Providers/Github";
+import Google from "../Providers/Google";
 
 const Registration = () => 
 
@@ -26,9 +28,11 @@ const Registration = () =>
               </h2>
               <Email type="signup" signup ={createUserWithEmailAndPassword}></Email>
               <div class="divider">OR</div>
+              <Google></Google>
+              <Github></Github>
 
               <p>
-                New in Birdly ? Register{" "}
+                Already in Birdly ? Login{" "}
                 <Link to="/login" className="text-red-500">
                   Here
                 </Link>{" "}
