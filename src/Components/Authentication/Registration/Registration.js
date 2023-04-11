@@ -1,5 +1,5 @@
 import React from "react";
-import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
+import { useCreateUserWithEmailAndPassword, useSignInWithGithub, useSignInWithGoogle } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
 import auth from "../../../firebase.init";
 import Email from "../Providers/Email";
@@ -16,6 +16,10 @@ const Registration = () =>
     emailLoading,
     emailError,
   ] = useCreateUserWithEmailAndPassword(auth);
+
+  const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
+  const [signInWithGithub, gitUser, gitLoading, gitError] = useSignInWithGithub(auth);
+
  
   return (
     <section className="signup-container">
@@ -28,8 +32,8 @@ const Registration = () =>
               </h2>
               <Email type="signup" signup ={createUserWithEmailAndPassword}></Email>
               <div class="divider">OR</div>
-              <Google></Google>
-              <Github></Github>
+              <Google googleSignIn = {signInWithGoogle}></Google>
+              <Github  githubSignIn = {signInWithGithub}></Github>
 
               <p>
                 Already in Birdly ? Login{" "}
