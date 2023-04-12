@@ -80,28 +80,33 @@
 
 .btn-buy
 {
-    background-color: #FCFFE7;
-    color: #000;
+    background-color: #F15A59;
+    color: #fff;
+    border: 3px solid transparent;
 }
 
 .btn-buy:hover
 {
-    background-color: #FFB26B;
-    color: #fff;
+    background-color: #ED2B2A;
+    color: #eee;
+    
+    border: 3px solid transparent;
 }
 
 
 
 .btn-detailes
 {
-    background-color: #FED2AA;
-    color: #000;
+    background-color: #FFB26B;
+    color: #fff;
+    border: 3px solid transparent;
 }
 
 .btn-detailes:hover
 {
-    background-color: #FFBF86;
-    color: #FCFFE7;
+    background-color: #EF9A53;
+    color: #eee;
+    border: 3px solid transparent;
 }
 
 
