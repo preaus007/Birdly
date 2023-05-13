@@ -1,14 +1,16 @@
-import { Rating } from '@smastrom/react-rating';
+
 import React from 'react';
+import { Rating } from 'primereact/rating'
+
 
 const RatingComponent = (props) => 
 {
 
-    const {rating , setRatings} = props
+    const {rating , setRating} = props
     return (
-        <div>
-            <Rating value={rating} onChange={setRatings}></Rating>
-        </div>
+        
+        <Rating className='flex justify-center align-middle gap-2 text-warning' value={rating} onChange={(e)=> setRating(e.value)}></Rating>
+
     );
 };
 

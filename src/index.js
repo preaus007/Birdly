@@ -5,17 +5,24 @@ import App from "./App";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { BrowserRouter } from "react-router-dom";
-import '@smastrom/react-rating/style.css'
+import { QueryClient, QueryClientProvider } from 'react-query'
+
 
 AOS.init();
 
+
+const queryClient = new QueryClient();
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
     <React.StrictMode>
-      <App />
+      
+    <QueryClientProvider client={queryClient}>
+    <App />
+    </QueryClientProvider>
+      
     </React.StrictMode>
   </BrowserRouter>
 );
