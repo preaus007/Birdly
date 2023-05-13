@@ -6,8 +6,7 @@ import auth from "../../../firebase.init";
 import 'react-datepicker/dist/react-datepicker.css'
 
 const Email = (props) => {
-  const { type, login, signup } = props;
-  let email;
+  const { type, login, signup, setEmail ,  setName , setEmailReg} = props;
 
   const {
     register,
@@ -16,13 +15,25 @@ const Email = (props) => {
   } = useForm();
 
 
+  const handleUniqueName = (name) =>
+  {
+    
+  }
+
+
   const handleLogin = (data) => {
     login(data.email, data.password)
+
+
+    
   }
 
 
   const handleSignUp = data => {
-    signup(data.name, data.email, data.phnNumber, data.password)
+    signup(data.email, data.password);
+    setEmail(data.email)
+    setName(data.name)
+    
   }
 
   const [startDate, setStartDate] = useState(new Date());
@@ -103,6 +114,7 @@ const Email = (props) => {
           <input
             type="text"
             placeholder="Your Name"
+            name='name'
             className="input input-bordered w-full max-w-xs"
             {...register("name", {
               required: { value: true, message: "Name is required" },

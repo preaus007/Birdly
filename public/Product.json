@@ -1,10 +1,23 @@
 [
     {
-        "name" : "Gamble Quail",
-        "scientific-Name" : "Callipepla californica",
-        "price" : "25",
-        "stock" : "100",
-        "family" : "Quail",
-        "img": ""
+        "id" : "1",
+        "name" : "Brad Givsone",
+        "comment" : "They are very fast on delivery",
+        "rating" : "4"
+        
+    },
+    {
+        "id" : "2",
+        "name" : "Janice Jackson",
+        "comment" : "They are providing beutiful birds",
+        "rating" : "5"
+        
+    },
+    {
+        "id" : "3",
+        "name" : "Alma Reynolds",
+        "comment" : "Their Birds are so lovely",
+        "rating" : "5"
+        
     }
 ]

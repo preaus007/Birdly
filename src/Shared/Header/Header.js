@@ -4,9 +4,16 @@ import { Link } from "react-router-dom";
 import Lottie from 'lottie-react'
 import Cart from '../../../src/Assets/83034-beaut-loading-cart.json'
 import bird from "../../Assets/pix3.png"
+import auth from "../../firebase.init";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { signOut } from "firebase/auth";
+
 
 
 const Header = () => {
+
+
+  const [ user ] = useAuthState(auth)
   return (
     <div className="navbar bg-dark ">
       <div className="navbar-start">
@@ -62,13 +69,14 @@ const Header = () => {
           </ul>
         </div>
         <Link to="/" className="btn btn-ghost normal-case flex text-xl">
-          <img src={bird} alt="logo" className="title-icon mr-2"/>
+          <img src={bird} alt="logo" className="title-icon mr-2" />
           <h2>Birdly</h2>
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal p-0">
-          
+
+
           <li tabIndex={0}>
             <a>
               Parent
@@ -91,28 +99,34 @@ const Header = () => {
               </li>
             </ul>
           </li>
-          <li>
-            <Link to="/login">Login</Link>
-          </li>
+
           <li>
             <Link to="/class">Classification</Link>
           </li>
           <li>
-            <Link>Our Services</Link>
+            <Link to="/aboutus">About Us</Link>
 
           </li>
+
           <li>
             <Link>Contact Us</Link>
 
           </li>
+
 
           <li>
           </li>
         </ul>
       </div>
       <div className="navbar-end">
+
+
         
-      <Link to="/product" className="btn">Shop now</Link>
+
+
+        <Link to="/product" className="btn">Shop now</Link>
+
+       { user ?<Link className="btn ml-5" onClick={()=> signOut()} to="/">Log Out</Link> : <Link className="btn ml-5" to="/login">Login</Link>}
         <Link to='/cart' className="cart-icon">
           <Lottie animationData={Cart} loop={true} />
         </Link>

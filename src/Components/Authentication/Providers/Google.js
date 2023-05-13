@@ -7,7 +7,7 @@ const Google = (props) =>
 {
     const { googleSignIn } = props;
     return (
-        <button className='btn google-btn' onClick={googleSignIn}>
+        <button className='btn google-btn' onClick={() => googleSignIn()}>
             <Lottie className='google-animation' animationData={GoogleAnimation} loop={true}></Lottie>
             Sign Up with Google
         </button>
