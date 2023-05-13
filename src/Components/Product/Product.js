@@ -3,7 +3,7 @@ import BirdsLoading from "../../Shared/Loaders/BIrdsLoading/BirdsLoading";
 
 
 
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import useFamily from "../../Hooks/useFamily";
 import Filter from "./Filter";
 
@@ -95,7 +95,7 @@ const Product = () => {
                   <h2 className="card-title">{product?.name?.substring(0, 12)}...</h2>
                   <p> <b>Price :</b> ${product.price}</p>
                   <div className="card-actions">
-                    <button className="btn btn-detailes shadow-md">Detailes</button>
+                    <Link to='/detailes' className="btn btn-detailes shadow-md">Detailes</Link>
                     <button className="btn btn-buy shadow-lg">Buy Now</button>
                   </div>
                 </div>
