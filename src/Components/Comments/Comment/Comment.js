@@ -1,4 +1,5 @@
 import React from 'react';
+import RatingComponent from '../../../Shared/Ratings/RatingComponent';
 
 const Comment = (props) => 
 {
@@ -12,8 +13,9 @@ const Comment = (props) =>
             <div className="card-body items-center text-center">
 
             <div className="rating">
-                <p>Ratings: {rating} /5</p>
+                <RatingComponent rating = {rating} defaultOnly={true}></RatingComponent>
             </div>
+            <p className='text-xl font-thin'>Rating : {rating}/5</p>
                 
                 <h2 className="text-xl font-semibold"> Customer's Name : {name} </h2>
                 <p>{review}</p>

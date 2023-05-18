@@ -127,6 +127,7 @@ const Header = () => {
         <Link to="/product" className="btn">Shop now</Link>
 
        { user ?<Link className="btn ml-5" onClick={()=> signOut()} to="/">Log Out</Link> : <Link className="btn ml-5" to="/login">Login</Link>}
+        
         <Link to='/cart' className="cart-icon">
           <Lottie animationData={Cart} loop={true} />
         </Link>

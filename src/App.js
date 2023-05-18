@@ -13,27 +13,35 @@ import Cart from "./Components/Orders/Cart/Cart";
 import Aboutus from "./Components/Aboutus/Aboutus";
 import Comments from "./Components/Comments/Comment/Comments"
 import Detailes from "./Components/ProductDetailes/Detailes/Detailes";
+import AllReviews from "./Components/Comments/AllReviews/AllReviews";
+import Users from "./Components/Comments/User's/Users";
 
-function App() 
-{
-  
-//Gludiolus
-//73sE7n8b27Aw7GLA
+function App() {
+
+  //Gludiolus
+  //73sE7n8b27Aw7GLA
 
   return (
     <div className="App">
-    <Header />
+      <Header />
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/home" element={<Home></Home>}></Route>
-        
+
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/signup" element={<Registration></Registration>}></Route>
         <Route path="/class" element={<RequireAuth><Classification></Classification></RequireAuth>}></Route>
-        <Route path="/product" element={<Product/>}></Route>
+        <Route path="/product" element={<Product />}></Route>
         <Route path="/cart" element={<Cart></Cart>}></Route>
         <Route path="/aboutus" element={<Aboutus></Aboutus>}></Route>
-        <Route path="/comments" element={<Comments></Comments>}></Route>
+        
+          <Route path="/comments" element={<Comments></Comments>}>
+            <Route index element={<AllReviews></AllReviews>}></Route>
+            <Route path="allReviews" element={<AllReviews></AllReviews>}></Route>
+            <Route path="userReviews" element={<Users></Users>}></Route>
+          </Route>
+
+
         <Route path="/detailes" element={<Detailes></Detailes>}></Route>
         <Route></Route>
         <Route></Route>
