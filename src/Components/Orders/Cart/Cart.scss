@@ -1,0 +1,28 @@
+
+
+.container
+{
+    padding:  4rem;
+    margin-left: auto;
+    margin-right : auto;
+    margin-top: 5rem;
+    margin-bottom: 2.5rem;
+}
+
+
+.cartContainer
+{ 
+    display: grid;
+    grid-template-columns: repeat( 2 , minmax(0,1fr));
+    gap: 4rem;
+}
+
+
+.productsContainer
+{
+
+    display: grid;
+    grid-template-columns: repeat( 2 , minmax(0,1fr));
+    gap: 2rem;
+
+}

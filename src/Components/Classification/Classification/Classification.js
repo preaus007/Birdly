@@ -72,6 +72,8 @@ const Classification = () => {
     updateFunction(file);
   };
 
+  console.log(imgBB);
+
   const handleClassification = () => {
     console.log(imgBB);
     const ourUrl = imgBB?.data?.url;
@@ -82,7 +84,7 @@ const Classification = () => {
       url: ourUrl,
     };
 
-    fetch(`http://localhost:8000/classification`, {
+    fetch(`https://bird-shop-server-two.vercel.app/classification`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -96,32 +98,46 @@ const Classification = () => {
   const predediction = img[0];
 
   return (
-    <div className="container ml-auto mr-auto p-16">
-      <article>
+    <div className="container ml-auto mr-auto p-16 mt-20 mb-16">
+      <article className="mt-10 mb-10">
         <h2 className="text-xl font-bold text-center mt-16 mb-10">
           Uplaod Your Bird Image
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           <Upload onUpload={handleUpload} change={handleChange}></Upload>
 
           <Canvas image={src}></Canvas>
         </div>
       </article>
 
-      <article>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-          <div>
-            <img src={src} className="rounded-xl" alt="" />
-            <div className="">
-              <button
-                className="btn btn-success mt-10 mb-5"
-                onClick={handleClassification}
-              >
-                CLassify
-              </button>
+      <article className="mt-20 mb-10">
+
+        <h2 className="text-xl font-bold text-center mt-16 mb-10">
+          Classify Your Bird
+        </h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+          <div className="card max-w-screen bg-base-100 shadow-xl">
+
+            <h2 className="text-xl font-bold text-center mt-10 mb-10">
+              Baid needs to Classify
+            </h2>
+            <figure className="px-10 pt-10">
+              <img src={src} className="rounded-xl" alt="" />
+            </figure>
+            <div className="card-body items-center text-center">
+              <div className="">
+                <button
+                  className="btn btn-success mt-10 mb-5"
+                  onClick={handleClassification}
+                >
+                  CLassify
+                </button>
+              </div>
             </div>
           </div>
+
           {img.length !== 0 ? (
             <Prediction prediction={img[0]}></Prediction>
           ) : null}

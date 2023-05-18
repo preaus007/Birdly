@@ -6,8 +6,13 @@ import BirdsLoading from "../../Shared/Loaders/BIrdsLoading/BirdsLoading";
 import { Link, useNavigate } from "react-router-dom";
 import useFamily from "../../Hooks/useFamily";
 import Filter from "./Filter";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../firebase.init";
+import { useQuery } from "react-query";
 
 const Product = () => {
+  const [user] = useAuthState(auth)
+  
   const [data, setData] = useState([]);
 
   const [family, setFamily] = useFamily();
@@ -16,6 +21,7 @@ const Product = () => {
   const [page, setPage] = useState(0)
   const [pageCount, setPageCount] = useState(0)
   const [size, setSize] = useState(6)
+  const [cart , setCart] = useState([])
 
 
 
@@ -43,10 +49,21 @@ const Product = () => {
       })
   }, [])
 
-  console.log(family);
+  
+  const url = `https://bird-shop-server-two.vercel.app/reviews?email=${user?.email}`
+
+  const { data : cartData = [] } = useQuery({
+    queryKey : ['cartData'],
+    queryFn : ()=> fetch(url).then(res=>res.json())
+
+   
+})
 
 
-  const navigate = useNavigate();
+  
+  const login = "/login"
+
+  const through = user? null:login
 
 
 
@@ -63,7 +80,55 @@ const Product = () => {
   }
 
 
-  const addToCart = () => {
+  const addToCart = (product) =>
+  {
+    const newCart = [...cart]
+    let cartDetailes;
+    if(!cartData.length)
+    {
+        newCart.push(product);
+
+        setCart(newCart)
+
+        cartDetailes = {
+          email : user?.email,
+          cart : cart
+        }
+
+        fetch("https://bird-shop-server-two.vercel.app/cart" , {
+          method : "PUT",
+          headers : {
+            'content-type': 'application/json'
+          },
+          body : JSON.stringify(cartDetailes)
+        }).then(res => res.json()).then(data => console.log(data))
+    }
+    else
+    {
+      setCart(cartData?.cart);
+
+      const newCart = [...cart]
+
+      newCart.push(product)
+
+      setCart(newCart)
+
+
+      cartDetailes = {
+        email : user?.email,
+        cart : cart
+      }
+
+      fetch("https://bird-shop-server-two.vercel.app/cart" , {
+        method : "PUT",
+        headers : {
+          'content-type': 'application/json'
+        },
+        body : JSON.stringify(cartDetailes)
+      }).then(res => res.json()).then(data => console.log(data))
+
+    }
+
 
   }
 
@@ -96,7 +161,7 @@ const Product = () => {
                   <p> <b>Price :</b> ${product.price}</p>
                   <div className="card-actions">
                     <Link to='/detailes' className="btn btn-detailes shadow-md">Detailes</Link>
-                    <button className="btn btn-buy shadow-lg">Buy Now</button>
+                    <Link to={through} className="btn btn-buy shadow-lg" onClick={()=>addToCart(product)}>Buy Now</Link>
                   </div>
                 </div>
               </div>

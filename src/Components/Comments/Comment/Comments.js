@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link, Outlet, useNavigate } from 'react-router-dom';
 import pix6 from "../../../Assets/pix6.jpg"
 import Users from '../User\'s/Users';
 const Comments = () => {
@@ -8,18 +9,29 @@ const Comments = () => {
     const [allReview, setAllReview] = useState(false)
 
 
+    const navigate = useNavigate();
+
     let myReviewClass = 'btn '
     let allReviewClass = 'btn '
 
     const HandleMyReview = () => {
         setAllReview(false)
         setMyReview(true)
+
+        navigate('userReviews')
+
+
     }
 
 
     const handleAllReview = () => {
         setAllReview(true)
         setMyReview(false)
+
+
+        navigate('allReviews')
+
+
     }
 
 
@@ -55,11 +67,17 @@ const Comments = () => {
                     <article className='text-center'>
                         <div className="btn-group">
 
-                            <button onClick={handleAllReview} className={allReviewClass}>All Reviews</button>
-                            <button onClick={HandleMyReview} className={myReviewClass} >My Reviews</button>
+                            <button  onClick={handleAllReview} className={allReviewClass}>All Reviews</button>
+                            <button  onClick={HandleMyReview} className={myReviewClass} >My Reviews</button>
+
 
                         </div>
+
+                        <Outlet></Outlet>
                     </article>
+
+
+
 
                 </div>
 
@@ -69,9 +87,6 @@ const Comments = () => {
             </article>
 
 
-            <article>
-                <Users></Users>
-            </article>
         </section>
     );
 };

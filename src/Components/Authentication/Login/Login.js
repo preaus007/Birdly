@@ -25,7 +25,7 @@ const Login = () =>
 
   if( error || googleError || gitError)
   {
-    Logerror = <p className="text-red">There is some error in login system. Please try again</p>
+    Logerror = <p className="text-danger">There is some error in login system. Please try again</p>
   }
 
   if(loading || googleLoading || gitLoading)
@@ -46,8 +46,8 @@ const Login = () =>
             <Email type="login" login={signInWithEmailAndPassword}></Email>
             <div class="divider">OR</div>
             
-            <Google googleSignIn = {signInWithGoogle}></Google>
-            <Github  githubSignIn = {signInWithGithub}></Github>
+            <Google></Google>
+            <Github></Github>
 
             {Logerror}
 

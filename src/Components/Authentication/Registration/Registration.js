@@ -17,9 +17,9 @@ const Registration = () => {
 
 
 
-
-  const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
-  const [signInWithGithub, gitUser, gitLoading, gitError] = useSignInWithGithub(auth);
+  
+  const [googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
+  const [gitUser, gitLoading, gitError] = useSignInWithGithub(auth);
 
   const [user] = useAuthState(auth)
 
@@ -82,12 +82,12 @@ const Registration = () => {
               <h2 class="text-center text-xl font-semibold">
                 Please Register in Our App
               </h2>
-              <Email type="signup" setEmail={setEmail} setEmailReg={setEmail} setName={setName} signup={createUserWithEmailAndPassword}></Email>
+              <Email type="signup" setEmail={setEmail}  setEmailReg={setEmail} setName={setName} signup={createUserWithEmailAndPassword}></Email>
               <div class="divider">OR</div>
-              <Google googleSignIn={signInWithGoogle}></Google>
-              <Github githubSignIn={signInWithGithub}></Github>
+              <Google></Google>
+              <Github></Github>
 
-              <p className="text-red-500">{errors}</p>
+              <p className="text-danger">{errors}</p>
 
 
 
