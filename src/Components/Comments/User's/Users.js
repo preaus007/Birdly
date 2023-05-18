@@ -47,13 +47,17 @@ const Users = () => {
 
     return (
 
-        <div className='container ml-auto mr-auto p-20 mt-20'>
+        <div className='container ml-auto mr-auto p-20 mt-10 mb-10'>
             <article className='text-center'>
+
+
+                
+
                 <div className="card mx-auto p-8 w-full max-w-sm shadow-2xl bg-base-100">
 
-                    <h2 className='text-2xl font-bold text-center mt-10 mb-5'>You can give your review here</h2>
+                    <h2 className='text-2xl font-semibold text-center mt-10 mb-5'>You can give your review here</h2>
 
-                    <RatingComponent rating={rating} setRating={setRating}></RatingComponent>
+                    <RatingComponent rating={rating} setRating={setRating} defaultOnly={false}></RatingComponent>
 
                     <div className="card-body text-center">
                         <form onSubmit={handleSubmit}>
