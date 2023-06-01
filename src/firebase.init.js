@@ -5,17 +5,14 @@ import { initializeApp } from "firebase/app";
 
 import { getAuth } from 'firebase/auth'
 // Your web app's Firebase configuration
-const firebaseConfig =
-{
-
-apiKey: "AIzaSyAXe2oY51fNtMkkG92m0GvAaQtHo6vEdwM",
-authDomain: "birdly-83721.firebaseapp.com",
-projectId: "birdly-83721",
-storageBucket: "birdly-83721.appspot.com",
-messagingSenderId: "61553833888",
-appId: "1:61553833888:web:175fad1ff620844752d6c5"
-
-};
+const firebaseConfig = {
+    apiKey: "AIzaSyD3g-h7AHlT6QwwHjV4TE3oT6SmO5X-wso",
+    authDomain: "birdly-2d129.firebaseapp.com",
+    projectId: "birdly-2d129",
+    storageBucket: "birdly-2d129.appspot.com",
+    messagingSenderId: "987546313096",
+    appId: "1:987546313096:web:7b41649e854dbda702da3d"
+  };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);

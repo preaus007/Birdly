@@ -42,7 +42,7 @@ function App() {
           </Route>
 
 
-        <Route path="/detailes" element={<Detailes></Detailes>}></Route>
+        <Route path="/detailes/:id" element={<Detailes></Detailes>}></Route>
         <Route></Route>
         <Route></Route>
         <Route></Route>

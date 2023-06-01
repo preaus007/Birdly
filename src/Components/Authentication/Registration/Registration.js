@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useAuthState, useCreateUserWithEmailAndPassword, useSignInWithGithub, useSignInWithGoogle } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
 import auth from "../../../firebase.init";
+import useUserName from "../../../Hooks/useUserName";
 import Email from "../Providers/Email";
 import Github from "../Providers/Github";
 import Google from "../Providers/Google";
@@ -28,6 +29,9 @@ const Registration = () => {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [emailReg, setEmailReg] = useState(false)
+  const [uniqeNameMessage , setUniqeNameMessage] = useState("")
+
+  const [userName , setUserName] = useUserName();
 
 
 
@@ -47,6 +51,9 @@ const Registration = () => {
       email: user.email
     }
 
+
+
+    console.log(uniqeNameMessage);
 
 
 
@@ -72,6 +79,9 @@ const Registration = () => {
   }
 
 
+  
+
+
 
   return (
     <section className="signup-container">
@@ -82,7 +92,7 @@ const Registration = () => {
               <h2 class="text-center text-xl font-semibold">
                 Please Register in Our App
               </h2>
-              <Email type="signup" setEmail={setEmail}  setEmailReg={setEmail} setName={setName} signup={createUserWithEmailAndPassword}></Email>
+              <Email type="signup" setEmail={setEmail} users = {userName} uniqeNameMessage={setUniqeNameMessage} uniqeName={uniqeNameMessage} setEmailReg={setEmail} setName={setName} signup={createUserWithEmailAndPassword}></Email>
               <div class="divider">OR</div>
               <Google></Google>
               <Github></Github>

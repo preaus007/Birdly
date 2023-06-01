@@ -121,7 +121,7 @@ const Classification = () => {
           <div className="card max-w-screen bg-base-100 shadow-xl">
 
             <h2 className="text-xl font-bold text-center mt-10 mb-10">
-              Baid needs to Classify
+              Bird needs to Classify
             </h2>
             <figure className="px-10 pt-10">
               <img src={src} className="rounded-xl" alt="" />

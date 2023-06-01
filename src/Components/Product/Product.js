@@ -22,7 +22,7 @@ const Product = () => {
   const [pageCount, setPageCount] = useState(0)
   const [size, setSize] = useState(6)
   const [cart , setCart] = useState([])
-
+  const navigate = useNavigate();
 
 
   useEffect(() => {
@@ -73,6 +73,12 @@ const Product = () => {
   }
 
 
+  const birdDetailes =  (id) =>
+  {
+    navigate(`/detailes/${id}`)
+  }
+
+
   let birdsFamily = family.map(family => <Filter key={family._id} family={family.family} filterProduct={filterProduct}></Filter>)
 
   if (data.length === 0) {
@@ -84,27 +90,9 @@ const Product = () => {
   {
     const newCart = [...cart]
     let cartDetailes;
-    if(!cartData.length)
+    if(cartData.length)
     {
-        newCart.push(product);
 
-        setCart(newCart)
-
-        cartDetailes = {
-          email : user?.email,
-          cart : cart
-        }
-
-        fetch("https://bird-shop-server-two.vercel.app/cart" , {
-          method : "PUT",
-          headers : {
-            'content-type': 'application/json'
-          },
-          body : JSON.stringify(cartDetailes)
-        }).then(res => res.json()).then(data => console.log(data))
-    }
-    else
-    {
       setCart(cartData?.cart);
 
       const newCart = [...cart]
@@ -113,6 +101,29 @@ const Product = () => {
 
       setCart(newCart)
 
+
+      cartDetailes = {
+        email : user?.email,
+        cart : cart
+      }
+
+      fetch("https://bird-shop-server-two.vercel.app/cart" , {
+        method : "PUT",
+        headers : {
+          'content-type': 'application/json'
+        },
+        body : JSON.stringify(cartDetailes)
+      }).then(res => res.json()).then(data => console.log(data))
+
+
+      //
+       
+    }
+    else
+    {
+      newCart.push(product);
+
+      setCart(newCart)
 
       cartDetailes = {
         email : user?.email,
@@ -160,7 +171,7 @@ const Product = () => {
                   <h2 className="card-title">{product?.name?.substring(0, 12)}...</h2>
                   <p> <b>Price :</b> ${product.price}</p>
                   <div className="card-actions">
-                    <Link to='/detailes' className="btn btn-detailes shadow-md">Detailes</Link>
+                    <button onClick={()=>birdDetailes(product._id)} className="btn btn-detailes shadow-md">Detailes</button>
                     <Link to={through} className="btn btn-buy shadow-lg" onClick={()=>addToCart(product)}>Buy Now</Link>
                   </div>
                 </div>

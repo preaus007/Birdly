@@ -1,3 +1,5 @@
+$myDisplay : grid;
+$my-template-column : repeat( 2 , minmax(0,1fr));
 
 
 .container
@@ -12,17 +14,16 @@
 
 .cartContainer
 { 
-    display: grid;
-    grid-template-columns: repeat( 2 , minmax(0,1fr));
+    display: $myDisplay;
+    grid-template-columns: $my-template-column;
     gap: 4rem;
 }
 
 
 .productsContainer
 {
-
-    display: grid;
-    grid-template-columns: repeat( 2 , minmax(0,1fr));
+    display: $myDisplay;
+    grid-template-columns: $my-template-column;
     gap: 2rem;
 
 }

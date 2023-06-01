@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import DatePicker from "react-datepicker";
 import { useForm } from "react-hook-form";
@@ -6,7 +6,9 @@ import auth from "../../../firebase.init";
 import 'react-datepicker/dist/react-datepicker.css'
 
 const Email = (props) => {
-  const { type, login, signup, setEmail, setName, setEmailReg } = props;
+  const { type, login, signup,  users , uniqeNameMessage , uniqeName , setEmail, setName, setEmailReg } = props;
+
+  const [duplicateNames , setDuplicateName] = useState(false)
 
   const {
     register,
@@ -15,11 +17,9 @@ const Email = (props) => {
   } = useForm();
 
 
-  const handleUniqueName = (event) => {
-    console.log("blured")
-    const name = event.target.value
+  
 
-  }
+
 
 
 
@@ -33,9 +33,27 @@ const Email = (props) => {
 
 
   const handleSignUp = data => {
-    signup(data.email, data.password);
+
     setEmail(data.email)
     setName(data.name)
+
+
+    const uniqueName = users.filter(user => user.name === data.name)
+
+    if(uniqueName.length)
+    {
+
+      setDuplicateName(true)
+      uniqeNameMessage("This Name is already used . Try another one.")
+    }
+
+
+    
+
+
+
+    signup(data.email, data.password);
+   
 
   }
 
@@ -118,10 +136,13 @@ const Email = (props) => {
             type="text"
             placeholder="Your Name"
             name='name'
-            onBlur={handleUniqueName}
             className="input input-bordered w-full max-w-xs"
             {...register("name", {
-              required: { value: true, message: "Name is required" },
+              required: { value: true, message:   "Name is required" },
+              pattern : {
+                value : duplicateNames === true, 
+                message :  uniqeNameMessage
+              }
             })}
           />
           <label className="label">
