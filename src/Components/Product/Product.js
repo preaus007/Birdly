@@ -24,6 +24,8 @@ const Product = () => {
   const [cart , setCart] = useState([])
 
 
+  const navigate = useNavigate();
+
 
   useEffect(() => {
     setLoading(true);
@@ -58,6 +60,12 @@ const Product = () => {
 
    
 })
+
+
+const goDetailes = (id) =>
+{
+  navigate(`/detailes/${id}`)
+}
 
 
   
@@ -160,7 +168,7 @@ const Product = () => {
                   <h2 className="card-title">{product?.name?.substring(0, 12)}...</h2>
                   <p> <b>Price :</b> ${product.price}</p>
                   <div className="card-actions">
-                    <Link to='/detailes' className="btn btn-detailes shadow-md">Detailes</Link>
+                    <button onClick={()=> goDetailes(product._id)} className="btn btn-detailes shadow-md">Detailes</button>
                     <Link to={through} className="btn btn-buy shadow-lg" onClick={()=>addToCart(product)}>Buy Now</Link>
                   </div>
                 </div>

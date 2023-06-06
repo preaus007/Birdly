@@ -34,15 +34,18 @@ function App() {
         <Route path="/product" element={<Product />}></Route>
         <Route path="/cart" element={<Cart></Cart>}></Route>
         <Route path="/aboutus" element={<Aboutus></Aboutus>}></Route>
+
+        <Route path="/comments" element={<Comments></Comments>}>
+          <Route index element={<AllReviews></AllReviews>}></Route>
+          <Route path="allReviews" element={<AllReviews></AllReviews>}></Route>
+          <Route path="userReviews" element={<Users></Users>}></Route>
+        </Route>
+
         
-          <Route path="/comments" element={<Comments></Comments>}>
-            <Route index element={<AllReviews></AllReviews>}></Route>
-            <Route path="allReviews" element={<AllReviews></AllReviews>}></Route>
-            <Route path="userReviews" element={<Users></Users>}></Route>
-          </Route>
+          <Route path="/detailes/:id" element={<RequireAuth><Detailes></Detailes></RequireAuth> }></Route>
+     
 
 
-        <Route path="/detailes" element={<Detailes></Detailes>}></Route>
         <Route></Route>
         <Route></Route>
         <Route></Route>
