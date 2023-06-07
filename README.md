@@ -7,6 +7,11 @@
 7. Interactive real-time rating options for each post or for your site/app. :heavy_check_mark:
 8. Pagination. :heavy_check_mark:
 9. Playing audio/videos that are embedded on your site but obtained from external databases not your own. For example, playing the youtube video embedded on your site. :heavy_check_mark:
+-> Visual
+![alt text](https://i.ibb.co/Fs2pPsR/youtube.png)
+-> Code
+![alt text](https://i.ibb.co/N9j51Kw/code.png)
+
 10. Google map with real-time location information or at least embed maps Iframe. :heavy_check_mark:
 11. Using Session information during the login/logout phase. :heavy_check_mark:
 12. Application of TensorFlow Lite for real-time prediction. :heavy_check_mark:
