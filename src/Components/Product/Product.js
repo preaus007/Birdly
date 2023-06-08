@@ -39,7 +39,7 @@ const Product = () => {
 
 
   useEffect(() => {
-    const url = process.env.REACT_APP_SERVER_DOMAIN;
+
     fetch(`https://bird-shop-server-two.vercel.app/itemsCount`)
       .then(res => res.json())
       .then(data => {
@@ -51,14 +51,7 @@ const Product = () => {
   }, [])
 
   
-  const url = `https://bird-shop-server-two.vercel.app/reviews?email=${user?.email}`
-
-  const { data : cartData = [] } = useQuery({
-    queryKey : ['cartData'],
-    queryFn : ()=> fetch(url).then(res=>res.json())
-
-   
-})
+ 
 
 
 const goDetailes = (id) =>
@@ -95,23 +88,15 @@ const goDetailes = (id) =>
 
   const addToCart = (product) =>
   {
-    const newCart = [...cart]
-    let cartDetailes;
-    if(cartData.length)
-    {
+    
 
-      setCart(cartData?.cart);
-
-      const newCart = [...cart]
-
-      newCart.push(product)
-
-      setCart(newCart)
-
-
-      cartDetailes = {
+      const cartDetailes = {
         email : user?.email,
-        cart : cart
+        birdId : product?._id,
+        name : product?.name,
+        img : product?.image,
+        price : product?.price
+
       }
 
       fetch("https://bird-shop-server-two.vercel.app/cart" , {
@@ -125,27 +110,7 @@ const goDetailes = (id) =>
 
       //
        
-    }
-    else
-    {
-      newCart.push(product);
-
-      setCart(newCart)
-
-      cartDetailes = {
-        email : user?.email,
-        cart : cart
-      }
-
-      fetch("https://bird-shop-server-two.vercel.app/cart" , {
-        method : "PUT",
-        headers : {
-          'content-type': 'application/json'
-        },
-        body : JSON.stringify(cartDetailes)
-      }).then(res => res.json()).then(data => console.log(data))
-
-    }
+    
 
 
   }
