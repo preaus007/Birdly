@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Lottie from 'lottie-react'
 import Cart from '../../../src/Assets/83034-beaut-loading-cart.json'
 import bird from "../../Assets/pix3.png"
@@ -12,6 +12,18 @@ import { signOut } from "firebase/auth";
 
 const Header = () => {
 
+
+  const navigate = useNavigate();
+
+  const handleSignOut = () =>
+  {
+    signOut(auth);
+    navigate('/')
+  }
+  const logAIn = () =>
+  {
+    navigate('/login')
+  }
 
   const [ user ] = useAuthState(auth)
   return (
@@ -126,7 +138,7 @@ const Header = () => {
 
         <Link to="/product" className="btn">Shop now</Link>
 
-       { user ?<Link className="btn ml-5" onClick={()=> signOut()} to="/">Log Out</Link> : <Link className="btn ml-5" to="/login">Login</Link>}
+       { user ?<button className="btn ml-5" onClick={handleSignOut}>Log Out</button> : <button className="btn ml-5" onClick={logAIn}>Login</button>}
         
         <Link to='/cart' className="cart-icon">
           <Lottie animationData={Cart} loop={true} />

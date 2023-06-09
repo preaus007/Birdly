@@ -53,6 +53,8 @@ const Registration = () => {
 
 
 
+
+
     console.log(uniqeNameMessage);
 
 
@@ -92,7 +94,7 @@ const Registration = () => {
               <h2 class="text-center text-xl font-semibold">
                 Please Register in Our App
               </h2>
-              <Email type="signup" setEmail={setEmail} users = {userName} uniqeNameMessage={setUniqeNameMessage} uniqeName={uniqeNameMessage} setEmailReg={setEmail} setName={setName} signup={createUserWithEmailAndPassword}></Email>
+              <Email type="signup" setEmail={setEmail} users = {userName} uniqeNameMessage={setUniqeNameMessage} uniqeName={uniqeNameMessage} setEmailReg={setEmail} setName={setName} newUserName={name} signup={createUserWithEmailAndPassword}></Email>
               <div class="divider">OR</div>
               <Google></Google>
               <Github></Github>

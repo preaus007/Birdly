@@ -6,15 +6,14 @@ const ServiceOne = () => {
     return (
         <div className='container ml-auto mr-auto p-40 '>
             <h1 className=' mb-10 text-2xl font-semibold text-center'>Fast delivery</h1>
-            <article className='grid grid-cols-1 lg:grid-cols-2 gap-12'>
-                <div className='max-w-screen'>
+            <h2 className='text-xl font-semibold text-center mt-10 mb-10'>We commit Fastest Delivery on Town</h2>
+            
+                <div className=''>
 
-                    <Lottie className='' animationData={Paracute} loop={true} />
+                    <Lottie className='w-96 mx-auto' animationData={Paracute} loop={true} />
                 </div>
-                <div className=' my-auto'>
-                    <h2 className='text-xl font-semibold'>We commit Fastest Delivery on Town</h2>
-                </div>
-            </article>
+                
+            
         </div>
     );
 };

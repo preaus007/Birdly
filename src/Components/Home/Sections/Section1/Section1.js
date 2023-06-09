@@ -2,10 +2,10 @@ import React from "react";
 
 const Section1 = () => {
   return (
-    <div className="w-screen h-screen mt-20 mb-10 max-w-screen">
+    <div className="max-w-screen max-h-screen mt-20 mb-10 max-w-screen">
     <h1 className="text-center text-3xl  mt-10 mb-5 font-semibold ">Our Inspiration</h1>
        <iframe
-            className="w-full"
+            className="max-w-screen"
             width="100%"
             height="80%"
             src="https://www.youtube.com/embed/ogeEY2q3_OU"

@@ -1,5 +1,7 @@
-$myDisplay : grid;
-$my-template-column : repeat( 2 , minmax(0,1fr));
+$mygridDisplay : grid;
+$my-template-column : repeat( 1 , minmax(0,1fr));
+
+
 
 
 .container
@@ -14,7 +16,7 @@ $my-template-column : repeat( 2 , minmax(0,1fr));
 
 .cartContainer
 { 
-    display: $myDisplay;
+    display: $mygridDisplay;
     grid-template-columns: $my-template-column;
     gap: 4rem;
 }
@@ -22,8 +24,22 @@ $my-template-column : repeat( 2 , minmax(0,1fr));
 
 .productsContainer
 {
-    display: $myDisplay;
+    display: $mygridDisplay;
     grid-template-columns: $my-template-column;
-    gap: 2rem;
-
+   
 }
+
+.productsContainer img
+{
+    width : 75%;
+}
+
+.cartItem
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
