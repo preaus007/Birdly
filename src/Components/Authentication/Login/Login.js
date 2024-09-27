@@ -1,8 +1,11 @@
 import React from "react";
-import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import { useSignInWithEmailAndPassword, useSignInWithGithub, useSignInWithGoogle } from "react-firebase-hooks/auth";
 import { Link, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
+import BirdsLoading from "../../../Shared/Loaders/BIrdsLoading/BirdsLoading";
 import Email from "../Providers/Email";
+import Github from "../Providers/Github";
+import Google from "../Providers/Google";
 
 const Login = () => 
 {
@@ -13,6 +16,22 @@ const Login = () =>
     loading,
     error,
   ] = useSignInWithEmailAndPassword(auth);
+
+  
+  const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
+  const [signInWithGithub, gitUser, gitLoading, gitError] = useSignInWithGithub(auth);
+
+  let Logerror 
+
+  if( error || googleError || gitError)
+  {
+    Logerror = <p className="text-danger">There is some error in login system. Please try again</p>
+  }
+
+  if(loading || googleLoading || gitLoading)
+  {
+    return <BirdsLoading></BirdsLoading>
+  }
   
 
   return (
@@ -26,6 +45,11 @@ const Login = () =>
             </h2>
             <Email type="login" login={signInWithEmailAndPassword}></Email>
             <div class="divider">OR</div>
+            
+            <Google></Google>
+            <Github></Github>
+
+            {Logerror}
 
             <p>
               New in Birdly ? Register{" "}

@@ -25,7 +25,7 @@
 
 .banner-container .slide1 {
 
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url("https://images.unsplash.com/photo-1522926193341-e9ffd686c60f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80") no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url("https://cdn.pixabay.com/photo/2020/02/28/15/35/bird-4887736_960_720.jpg") no-repeat;
     background-position: center;
     background-size: cover;
     position: relative;
@@ -77,3 +77,70 @@
     font-family: 'Poppins', sans-serif;
     
 }
+
+.btn-buy
+{
+    background-color: #F15A59;
+    color: #fff;
+    border: 3px solid transparent;
+}
+
+.btn-buy:hover
+{
+    background-color: #ED2B2A;
+    color: #eee;
+    
+    border: 3px solid transparent;
+}
+
+
+
+.btn-detailes
+{
+    background-color: #FFB26B;
+    color: #fff;
+    border: 3px solid transparent;
+}
+
+.btn-detailes:hover
+{
+    background-color: #EF9A53;
+    color: #eee;
+    border: 3px solid transparent;
+}
+
+
+
+
+.cart-icon
+{
+    width: 25%;
+}
+
+.google-animation
+{
+    width: 15%;
+}
+
+.git-animation
+{
+    width: 15%;
+}
+.title-icon
+{
+    width: 40%;
+    height: 100%;
+}
+
+
+.About-us
+{
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url("https://images.unsplash.com/photo-1478695605156-f64b0ee877f4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80") no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    height: 100vh;
+}
+
+
+

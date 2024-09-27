@@ -1,70 +1,26 @@
-# Getting Started with Create React App
+1. Submit your ERD that should be drawn in Visio or EDrawMax or LaTex or any other tools that provide the scalable PDF. :heavy_check_mark:
+2. Realtime commenting options through contacting your own database without refreshing or reloading the whole page as shown in Facebook. :heavy_check_mark:
+3. Like and dislike button and count feature as shown on Facebook.:heavy_check_mark:
+4. Realtime unique username verification through contacting your own database without refreshing or reloading the whole page.
+5. Email and phone number verification like the Gmail registration page. :heavy_check_mark:
+6. Multiple text box and multiple drop down list manipulation.
+7. Interactive real-time rating options for each post or for your site/app. :heavy_check_mark:
+8. Pagination. :heavy_check_mark:
+9. Playing audio/videos that are embedded on your site but obtained from external databases not your own. For example, playing the youtube video embedded on your site. :heavy_check_mark:
+* <h3>Visual</h3>
+![alt text](https://i.ibb.co/Fs2pPsR/youtube.png)
+*  <h3>Code</h3>
+![alt text](https://i.ibb.co/N9j51Kw/code.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+10. Google map with real-time location information or at least embed maps Iframe. :heavy_check_mark:
+11. Using Session information during the login/logout phase. :heavy_check_mark:
+12. Application of TensorFlow Lite for real-time prediction. :heavy_check_mark:
+13. Uploading images/files and showing them on your site/app. :heavy_check_mark:
+14. Datepicker. :heavy_check_mark:
+15. Embed animations using GSAP.
+16. Application of SASS. :heavy_check_mark:
+17. Configure and work with modern workflow and collaboration tools such as Git/GulpJs/GrantJs/Webpack/SVN. :heavy_check_mark:
+18. Simple application of GraphQL. :heavy_check_mark:
+19. RESTful APIs / SOAP APIs :heavy_check_mark:
+20. Crystal report.
+21. TBD: Other task-specific features.
